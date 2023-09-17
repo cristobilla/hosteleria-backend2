@@ -1,6 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn } from 'typeorm';
 import { Productos } from './productos.entity';
 import { Empleados } from './empleados.entity';
+import { RecuentoCaja } from './caja.entity';
 @Entity()
 export class Comandas {
   @PrimaryGeneratedColumn('uuid')
@@ -24,4 +25,7 @@ export class Comandas {
 
   @ManyToOne(() => Productos, (producto) => producto.comanda)
   producto: Productos[];
+
+  @ManyToOne(() => RecuentoCaja, (recuentoCaja) => recuentoCaja.comanda)
+  recuentoComandas: RecuentoCaja[];
 }

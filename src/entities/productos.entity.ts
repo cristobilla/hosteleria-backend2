@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  ManyToOne,
+} from 'typeorm';
 import { Ingredientes } from './ingredientes.entity';
 import { Alergenos } from './alergenos.entity';
 import { Comandas } from './comanda.entity';
@@ -34,4 +40,6 @@ export class Productos {
 
   @ManyToOne(() => Comandas, (comanda) => comanda.producto)
   comanda: Comandas[];
+  
+  
 }

@@ -1,0 +1,17 @@
+applications:
+
+  - name: hosteleria
+
+    routes:
+
+      - route: hosteleria.cfapps.us10-001.hana.ondemand.com
+
+    path: .
+
+    buildpacks:
+
+      - nodejs_buildpack
+
+    memory: 1024MB
+
+    command: npm run start:prod
